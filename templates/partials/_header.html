@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <style>
+        body {
+            margin: 10;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header img {
+            max-width: 300px; /* Adjust the width as needed */
+            display: block;
+            margin: 0 auto; /* Center the logo horizontally */
+        }
+
+        nav ul {
+            
+            list-style-type: none;
+            padding: 15px 0;
+            background-color: #3A534B;
+            text-align: center;
+            overflow: hidden; 
+        
+        }
+
+        nav li {
+            display: inline;
+            margin: 0 20px; /* Adjust the spacing between links as needed */
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #f8cf02; /* Link color */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="{% static 'download.png' %}" alt="Logo">
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'menu' %}">Menu</a></li>
+            <li><a href="{% url 'book' %}">Book</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

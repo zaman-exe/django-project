@@ -2,6 +2,8 @@ from http.client import HTTPResponse
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from lemonapp.models import Menu
+
 # Create your views here.
 from .forms import ApplicationForm, PersonForm, BookingForm
 
@@ -20,8 +22,7 @@ def home(request):
 def login(request):
     return render(request, "login.html", {}) 
 
-def menu(request):
-    return HttpResponse('Menu')
+
 def book(request):
     return HttpResponse('Make a booking')
 
@@ -49,6 +50,18 @@ def booking_form(request):
     context = {'booking_form': form}
     return render(request, 'forms.html', context) 
 
+def menu(request):
+    menu_data = Menu.objects.all()
+    main_data = {"menu": menu_data}
+    return render(request, 'menu.html', {"menu": main_data})
+
 def about(request): 
     return render(request, 'about.html')
+
+def display_menu_item(request, pk=None): 
+    if pk: 
+        menu_item = Menu.objects.get(pk=pk) 
+    else: 
+        menu_item = "" 
+    return render(request, 'menu_item.html', {"menu_item": menu_item}) 
      

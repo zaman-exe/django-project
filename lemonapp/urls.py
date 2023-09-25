@@ -8,6 +8,7 @@ urlpatterns = [
     path('menu/', views.menu, name="menu"),
     path('book/', views.book, name="book"), 
     path('about/', views.about,name="about"), 
-    path('person_form/', views.person_form), 
-    path('booking_form/', views.booking_form)
+    path('person_form/', views.person_form,), 
+    path('booking_form/', views.booking_form, name="booking_form"),
+    path('menu_item/<int:pk>/', views.display_menu_item, name="menu_item")
 ]

@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents %}
+<style>
+    .menu-title {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 30px;
+      }
+      
+      .menu-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      
+      .menu-item {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        width: calc(33.33% - 20px);
+        text-align: center;
+        text-decoration: none;
+      }
+      
+      .menu-item a {
+        text-decoration: none;
+        color: #333;
+      }
+      
+      .menu-item:hover {
+        transform: scale(1.05);
+        transition: transform 0.2s ease-in-out;
+      }
+      
+      .menu-image {
+        max-width: 100%;
+        height: 400px;
+        border-radius: 5px;
+      }
+      
+      .menu-item-name {
+        font-size: 24px;
+        margin-top: 10px;
+        color: #3A534B;
+      }
+      
+      .menu-description {
+        font-size: 14px;
+        margin-top: 4px;
+        color: black;
+      }
+      
+      .menu-price {
+        font-size: 30px;
+        font-weight: bold;
+        margin-top: 10px;
+        color: #f8cf02;
+      }
+
+      .menu-title,
+      .menu-item-name,
+      .menu-description,
+      .menu-price {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            
+        }
+    </style>
+    
+    <h1 class="menu-title">Menu</h1>
+<div class="menu-container">
+    {% for item in menu.menu %}
+    <a href="{% url 'menu_item' pk=item.pk %}" class="menu-item"> <!-- Wrap the whole menu item in the anchor tag -->
+        <img src="{% static 'menu/' %}{{ item.name }}.jpg" alt="{{ item.name }}" class="menu-image" />
+        <div class="menu-details">
+            <h2 class="menu-item-name">{{ item.name }}</h2>
+            <p class="menu-description">{{ item.description }}</p>
+            <span class="menu-price">${{ item.price }}</span>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+    {% endblock %}

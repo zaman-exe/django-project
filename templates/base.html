@@ -1,16 +1,25 @@
 <!--header-->  
-{% include 'partials/_header.html' %} 
-
-<!--contents-->  
-
-    {% block contents %}  
-
-    {% endblock %} 
-   
-<hr>   
-
-{% block footer %}   
-<div>   
-<h4 align="right">All rights reserved</h4>   
-</div>   
-{% endblock %}   
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Little Lemon</title>
+    <meta name="description" content="A brief description" />
+    <meta
+      name="author"
+      content="Based in Chicago, Illinois, Little Lemon is a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist."
+    />
+  </head>
+  
+  <body>
+    <!--Header contents-->
+    {% include 'partials/_header.html' %}
+    <main>
+        {% block contents %} 
+        {% endblock %}
+    </main>
+    <!--Footer content-->
+    {% include 'partials/_footer.html' %} 
+  </body>
+</html>

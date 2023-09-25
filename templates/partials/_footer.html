@@ -1,0 +1,40 @@
+{% load static %}
+    <style>
+        footer.site-footer {
+            background-color: #f0f0f0;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-logo {
+            margin-right: 20px;
+        }
+
+        .logo-image {
+            margin-top: 5px;
+            max-width: 110px;
+            height: auto;
+           
+        }
+        .footer-text {
+            font-size: 14px;
+        }
+    </style>
+<footer>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="{% static 'Asset 16@4x.png' %}" alt="Little Lemon Logo" class="logo-image" />
+            </div>
+            <div class="footer-text">
+                <p>&copy; Copyright Little Lemon</p>
+            </div>
+        </div>
+    </footer>
+<footer>

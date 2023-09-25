@@ -1,10 +1,4 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website</title>
     <style>
         body {
             margin: 10;
@@ -19,7 +13,7 @@
 
         header img {
             max-width: 300px; /* Adjust the width as needed */
-            display: block;
+            
             margin: 0 auto; /* Center the logo horizontally */
         }
 
@@ -40,23 +34,20 @@
 
         nav a {
             text-decoration: none;
-            color: #f8cf02; /* Link color */
+            color: #f8cf02; 
             font-weight: bold;
         }
     </style>
-</head>
-<body>
     <header>
-        <img src="{% static 'download.png' %}" alt="Logo">
+        <img src="{% static 'download.png' %}" alt="Logo" calss="header img">
     </header>
-    
     <nav>
         <ul>
             <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'menu' %}">Menu</a></li>
-            <li><a href="{% url 'book' %}">Book</a></li>
+            <li><a href="{% url 'booking_form' %}">Book</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            
         </ul>
     </nav>
-</body>
-</html>
+

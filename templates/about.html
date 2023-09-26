@@ -1,7 +1,77 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block content %}
-<p> About Us</p>
-<p> This is an About page for Little Lemon </p>
+{% block contents %}
+<style>
+  /* Add CSS styling to enhance the page's appearance */
+  .about-section {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+  }
 
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .lead {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .image-container {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+</style>
+
+<section class="about-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <h1>About Us</h1>
+        <p class="lead">
+          Welcome to Little Lemon, your go-to destination for exquisite Mediterranean cuisine with a modern twist. Our family-owned restaurant, nestled in the heart of Chicago, Illinois, brings you the flavors of Italy, Greece, and Turkey.
+        </p>
+        <p>
+          At Little Lemon, we're passionate about crafting dishes that pay homage to our Mediterranean roots while adding a contemporary touch. Our menu features a curated selection of 12-15 seasonal items that are sure to tantalize your taste buds.
+        </p>
+        <p>
+          We take pride in providing a rustic yet relaxed atmosphere, perfect for any occasion. Our affordable prices make us a popular choice for breakfast, lunch, and dinner.
+        </p>
+        <p>
+          Meet the faces behind Little Lemon – Mario and Adrian, two Italian brothers who embarked on a journey to the United States to turn their dream of owning a restaurant into reality. Mario, our head chef, infuses his family recipes and Italian culinary expertise into every dish.
+        </p>
+        <p>
+          Adrian, our marketing guru, spearheads our efforts to expand beyond classic Italian cuisine, bringing you a fusion of Mediterranean flavors.
+        </p>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="image-container">
+          <img src="{% static 'mario-and-adrian.jpg' %}" alt="Mario and Adrian" class="img-fluid" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}
